@@ -34,6 +34,11 @@ RUN set -eux && \
 
 FROM debian:bullseye-slim
 
+LABEL org.opencontainers.image.authors="Clément Dubreuil <clement@dubreuil.dev>" \
+      org.opencontainers.image.source="https://github.com/clementd64/docker-nomad" \
+      org.opencontainers.image.version=$NOMAD_VERSION \
+      org.opencontainers.image.title="nomad"
+
 # Create a nomad user and group first so the IDs get set the same way, even as
 # the rest of this may change over time.
 RUN addgroup --system nomad && \
